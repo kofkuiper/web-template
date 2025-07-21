@@ -12,7 +12,7 @@ $ pnpm run dev
 ```
 
 ---
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Tanstack Router + TailwindCSS + Husky + Dotenvx
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
