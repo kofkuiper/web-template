@@ -1,0 +1,47 @@
+{
+  "name": "web-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "dotenvx run -- vite --port=3001",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "env:dev:ec": "dotenvx encrypt",
+    "env:dev:dc": "dotenvx decrypt",
+    "env:uat:ec": "dotenvx encrypt -f .env.uat",
+    "env:uat:dc": "dotenvx decrypt -f .env.uat",
+    "env:prod:ec": "dotenvx encrypt -f .env.prod",
+    "env:prod:dc": "dotenvx decrypt -f .env.prod",
+    "env:all:ec": "bun run env:dev:ec && bun run env:uat:ec && bun run env:prod:ec",
+    "env:all:dc": "bun run env:dev:dc && bun run env:uat:dc && bun run env:prod:dc",
+    "prepare": "husky",
+    "check:all:ec:envs": "bun run scripts/check-all-ec-envs.ts"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.47.6",
+    "@tailwindcss/vite": "^4.1.11",
+    "@tanstack/react-router": "^1.128.0",
+    "@tanstack/react-router-devtools": "^1.128.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@tanstack/router-plugin": "^1.128.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "child_process": "^1.0.2",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
+  }
+}
